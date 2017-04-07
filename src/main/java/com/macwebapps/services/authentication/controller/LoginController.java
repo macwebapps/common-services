@@ -1,7 +1,8 @@
-package com.macwebapps.services.login.controller;
+package com.macwebapps.services.authentication.controller;
 
-import com.macwebapps.services.login.dto.Account;
-import com.macwebapps.services.login.dto.LoginDTO;
+import com.macwebapps.services.authentication.dto.Account;
+import com.macwebapps.services.authentication.dto.LoginDTO;
+import com.macwebapps.services.authentication.services.LoginService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,12 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/login")
 public class LoginController {
 
+    // FIXME inject instead of instantiation
+    private LoginService service = new LoginService();
+
     @RequestMapping(value = "/{id}", method= RequestMethod.GET)
     public ResponseEntity<?> login(@PathVariable String id, LoginDTO dto){
 
-        Account account = new Account(id);
-        account.setFirstName("Michael");
-        account.setLastName("Jordan");
+        Account account = service.login(id);
 
         return new ResponseEntity<>(account, HttpStatus.OK);
     }
