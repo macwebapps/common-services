@@ -1,4 +1,4 @@
-package com.macwebapps.services.authentication.dto;
+package com.macwebapps.authentication.dto;
 
 /**
  * Created by froilan.macugay@pictureworks.com.au on 7/4/17.

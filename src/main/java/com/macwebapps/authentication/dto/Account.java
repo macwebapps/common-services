@@ -1,4 +1,4 @@
-package com.macwebapps.services.authentication.dto;
+package com.macwebapps.authentication.dto;
 
 import java.util.Date;
 
