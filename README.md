@@ -40,7 +40,8 @@ https://spring.io/guides/gs/rest-service/
 1. Build the project "gradle clean build"
 2. Run database "gradle startEmbeddedMysql"
 3. Create database "gradle flywayMigrate -i"
-4. Submit requests to postman.
+4. Run "gradle bootRun"
+5. Application is ready to receive requests from postman.
 
 
 ### Postman requests
