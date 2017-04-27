@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -26,7 +27,9 @@ public class UserDAO implements IUserDAO{
 
     @Override
     public User getUserByName(String username) {
-        return entityManager.find(User.class, username);
+        Query q = entityManager.createNativeQuery("SELECT u.user_id, u.user_name, u.password, u.enabled FROM User u WHERE u.user_name = :username", User.class);
+        q.setParameter("username", username);
+        return (User) q.getSingleResult();
     }
 
     @Override
