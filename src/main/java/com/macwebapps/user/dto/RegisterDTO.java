@@ -1,20 +1,15 @@
-package com.macwebapps.authentication.dto;
+package com.macwebapps.user.dto;
 
 /**
- * Created by froilan.macugay@pictureworks.com.au on 7/4/17.
+ * Created by froilan.macugay@pictureworks.com.au on 21/4/17.
  */
-public class LoginDTO {
+public class RegisterDTO {
 
     private String username;
+
     private String password;
 
-    public LoginDTO() {
-    }
-
-    public LoginDTO(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+    private boolean enabled;
 
     public String getUsername() {
         return username;
@@ -30,5 +25,13 @@ public class LoginDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

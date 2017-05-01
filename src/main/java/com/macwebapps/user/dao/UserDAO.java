@@ -1,6 +1,6 @@
-package com.macwebapps.core.user.dao;
+package com.macwebapps.user.dao;
 
-import com.macwebapps.core.user.entity.User;
+import com.macwebapps.user.entity.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 
@@ -27,9 +27,14 @@ public class UserDAO implements IUserDAO{
 
     @Override
     public User getUserByName(String username) {
-        Query q = entityManager.createNativeQuery("SELECT u.user_id, u.user_name, u.password, u.enabled FROM User u WHERE u.user_name = :username", User.class);
+        Query q = entityManager.createQuery("FROM User WHERE user_name = :username", User.class);
         q.setParameter("username", username);
-        return (User) q.getSingleResult();
+
+        List<User> users = q.getResultList();
+        if(users.isEmpty()){
+            return null;
+        }
+        return users.get(0);
     }
 
     @Override

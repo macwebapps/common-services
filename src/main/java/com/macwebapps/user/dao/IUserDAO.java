@@ -1,17 +1,18 @@
-package com.macwebapps.core.user.service;
+package com.macwebapps.user.dao;
 
-import com.macwebapps.core.user.entity.User;
+import com.macwebapps.user.entity.User;
 
 import java.util.List;
 
 /**
  * Created by froilan.macugay@pictureworks.com.au on 21/4/17.
  */
-public interface IUserService {
+public interface IUserDAO {
 
     List<User> getAllUsers();
     User getUserByName(String username);
-    boolean addUser(User user);
+    void addUser(User user);
     void updateUser(User user);
     void deleteUser(String username);
+
 }

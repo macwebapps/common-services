@@ -17,7 +17,7 @@ public class GlobalCorsConfig {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://localhost:4200", "http://localhost:63342");
+                registry.addMapping("/**").allowedOrigins("*"); // FIXME change this in production
             }
         };
     }

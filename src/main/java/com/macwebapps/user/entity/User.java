@@ -1,4 +1,4 @@
-package com.macwebapps.core.user.entity;
+package com.macwebapps.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -27,7 +27,7 @@ public class User implements Serializable {
     @Column(name = "ENABLED")
     private boolean enabled;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     @JsonManagedReference
     private List<UserRole> roles;
 

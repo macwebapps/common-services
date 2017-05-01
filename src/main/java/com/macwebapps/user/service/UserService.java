@@ -1,7 +1,7 @@
-package com.macwebapps.core.user.service;
+package com.macwebapps.user.service;
 
-import com.macwebapps.core.user.dao.IUserDAO;
-import com.macwebapps.core.user.entity.User;
+import com.macwebapps.user.dao.IUserDAO;
+import com.macwebapps.user.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

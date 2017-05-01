@@ -65,3 +65,6 @@ Body:
   "enabled": true
 }
 
+
+Sample header
+X-Authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwic2NvcGVzIjpbIlJPTEVfTUVNQkVSIl19.hCIzlbwjwtLkDywHS_uJww50GaRWQrS9RT7WTJ_8YTvfwSlVF8W_scweQZXQ1VFNe0h_5m-U0UYL5miNnbFbpQ

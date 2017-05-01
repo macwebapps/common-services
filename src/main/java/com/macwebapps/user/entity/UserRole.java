@@ -1,4 +1,4 @@
-package com.macwebapps.core.user.entity;
+package com.macwebapps.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -25,6 +25,7 @@ public class UserRole implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "ROLE", insertable=false, updatable=false)
     protected Role role;
+
 
     public int getId() {
         return id;
